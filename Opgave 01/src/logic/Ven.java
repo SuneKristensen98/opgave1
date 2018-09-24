@@ -19,29 +19,69 @@ public class Ven {
 
 	}
 
+
 	public String getNavn() {
 		return navn;
 	}
+
+
+	public void setNavn(String navn) {
+		this.navn = navn;
+	}
+
 
 	public String getEmail() {
 		return email;
 	}
 
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+
 	public String getTelefon() {
 		return telefon;
 	}
 
+
+	public void setTelefon(String telefon) {
+		this.telefon = telefon;
+	}
+
+
 	public String getFødselsdag() {
 		return fødselsdag;
 	}
-	
+
+
+	public void setFødselsdag(String fødselsdag) {
+		this.fødselsdag = fødselsdag;
+	}
+
+
 	public String getAdresse() {
 		return adresse;
 	}
-	
+
+
+	public void setAdresse(String adresse) {
+		this.adresse = adresse;
+	}
+
+
+
 	public String getPostnr() {
 		return postnr;
 	}
+
+
+
+	public void setPostnr(String postnr) {
+		this.postnr = postnr;
+	}
+
+
 
 	@Override
 	public String toString() {

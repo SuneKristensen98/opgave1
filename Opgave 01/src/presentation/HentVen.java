@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 import logic.Ven;
 import logic.VennerOgBekendte;
+import logic.VennerOgBekendteImpl;
 
 public class HentVen {
 	private VennerOgBekendte venner;
@@ -25,19 +26,18 @@ public class HentVen {
 		System.out.println("Indtast email - For at afslutte tryk på \"x\"");
 	}
 
-	private void processIndtasning(String indtastning, Scanner sc) {
-		String[] dele = indtastning.split(",");
-		Ven ven = venner.hent(indtastning.trim());
+	private void processIndtasning(String email, Scanner sc) {
+		Ven ven = venner.hent(email.trim());
+		boolean retur = false;
+		
+		if (retur) {
+			System.out.println();
+			System.out.println("Succesfuldt hentet");
+			System.out.println();
+		}
+		
 
-		//if (retur = true)
-			
-		System.out.println();
-		System.out.println("Succesfuldt hentet");
-		System.out.println();
-
-	//	if (retur = false)
-			System.out.println("Fejl i forbindelse med at hente ven");
-
+		
+	
 	}
-
 }

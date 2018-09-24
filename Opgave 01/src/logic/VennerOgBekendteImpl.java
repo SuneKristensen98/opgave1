@@ -30,8 +30,8 @@ public class VennerOgBekendteImpl implements VennerOgBekendte {
 
 	@Override
 	public Ven hent(String email) {
-		venner.hent(email);
-		return null;
+		return venner.hent(email);
+		
 	}
 
 	@Override

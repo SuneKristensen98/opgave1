@@ -1,17 +1,11 @@
 package data;
 
-import java.util.ArrayList;
-
 import logic.Ven;
 
 public class VenContainer {
 
 	int a, b;
 	String t;
-
-	public int size1() {
-		return nextElement;
-	}
 
 	private Ven[] array;
 	private int nextElement = 0;
@@ -24,16 +18,18 @@ public class VenContainer {
 		array = new Ven[startantal];
 	}
 
-	public void addElement(Ven s) {
+	public void addElement(Ven ven) {
 		if (nextElement >= array.length) {
 			Ven[] temp = array;
 			array = new Ven[array.length * 2];
 			for (int i = 0; i < nextElement; i++) {
 				array[i] = temp[i];
+
 			}
 		}
-		array[nextElement] = s;
+		array[nextElement] = ven;
 		nextElement++;
+		System.out.println("jeg har været i addElement" + ven);
 	}
 
 	public Ven getElement(int index) {
@@ -44,11 +40,26 @@ public class VenContainer {
 		return nextElement;
 	}
 
-	public void hent(String email) {
-		//return false;
-		
+	public Ven find(String email) {
+		return null;
 	}
-}
+
+	public Ven hent(String email) {
+		for (int i = 0; i < nextElement; i++) {
+			if (array[i].getEmail().equals(email)) {
+				System.out.println(array[i]);
+				return array[i];
+				
+			}
+		}
+
+		System.out.println();
+		System.out.println("Denne email findes ikke");
+		System.out.println();
+		return null;
+		}
+	}
+
 
 //		for (int a = 1; a < nextElement; a++) {
 //			for (int b = nextElement - 1; b >= a; b--) {

@@ -1,9 +1,9 @@
 package presentation;
 
 import java.util.Scanner;
-
 import logic.Ven;
 import logic.VennerOgBekendte;
+import logic.VennerOgBekendteImpl;
 
 public class OpretVen {
 	private VennerOgBekendte venner;
@@ -22,23 +22,27 @@ public class OpretVen {
 
 	private void showMenu() {
 		System.out.println("Opret Ven eller Bekendt");
-		System.out.println("Indtast navn, email, telefon, fødselsdag, adresse, postnr efterfulgt med et , efter hver indtastning - For at afslutte tryk på \"x\"");
+		System.out.println(
+				"Indtast navn, email, telefon, fødselsdag, adresse, postnr efterfulgt med et , efter hver indtastning - For at afslutte tryk på \"x\"");
 	}
 
 	private void processIndtasning(String indtastning, Scanner sc) {
 		String[] dele = indtastning.split(",");
-		Ven ven = new Ven(dele[0].trim(), dele[1].trim(), dele[2].trim(), dele[3].trim(), dele[4].trim(), dele[5].trim());
+		Ven ven = new Ven(dele[0].trim(), dele[1].trim(), dele[2].trim(), dele[3].trim(), dele[4].trim(),
+				dele[5].trim());
+
 		boolean retur = venner.opret(ven);
-		if(retur = true);
-		System.out.println();
-		System.out.println("Succesfuldt Oprettet");
-		System.out.println();
-		
-		if (retur = false)
-		System.out.println("Fejl i opretning");
-		
-		
-		
+		if (retur) {
+			System.out.println();
+			System.out.println("Succesfuldt Oprettet");
+			System.out.println(ven);
+			System.out.println();
+		}
+
+		else {
+			System.out.println("Fejl i opretning");
+		}
+
 	}
 
 }
