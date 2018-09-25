@@ -25,20 +25,26 @@ public class OpdaterVen {
 		System.out.println("Indtast email - For at afslutte tryk på \"x\"");
 	}
 
-	private void processIndtasning(String indtastning, Scanner sc) {
-		String[] dele = indtastning.split(",");
-		Ven ven = venner.hent(indtastning.trim());
-		//boolean retur = venner.hent(email);
-	//	if(retur = true);
+	private void processIndtasning(String navn, Scanner sc) {
+
+		String email = sc.nextLine();
+		Ven ven = venner.hent(email);
+		System.out.println("Indtast resten");
+		String indtastning = sc.nextLine();
+		String[] resten = indtastning.split(",");
+		Ven opdateretVen = new Ven(resten[0], email, resten[1]);
+		venner.opdater(opdateretVen);
+
+		 boolean retur = venner.hent(email);
+		 if(retur = true);
+
 		System.out.println();
 		System.out.println("Succesfuldt opdateret");
 		System.out.println();
-		
-	//	if (retur = false)
+
+		// if (retur = false)
 		System.out.println("Fejl i opdatering");
-		
-		
-		
+
 	}
 
 }
