@@ -1,10 +1,13 @@
 package logic;
 
+import java.lang.reflect.Array;
+
 import data.VenContainer;
 
 public class VennerOgBekendteImpl implements VennerOgBekendte {
 
 	private VenContainer venner = new VenContainer();
+
 	@Override
 	public boolean opret(Ven ven) {
 		Ven gammelven = hent(ven.getEmail());
@@ -30,14 +33,32 @@ public class VennerOgBekendteImpl implements VennerOgBekendte {
 
 	@Override
 	public Ven hent(String email) {
-		return venner.hent(email);
-		
+		for (int i = 0; i < venner.size(); i++) {
+			Ven ven = venner.getElement(i);
+			if (ven.getEmail().equals(email))
+			 return venner.hent(email);
+		}
+		return null;
 	}
 
 	@Override
 	public VenContainer find(String sogestreng) {
-		
-		return null;
+
+		VenContainer fundneVenner = new VenContainer();
+		for (int i = 0; i < venner.size(); i++) {
+			Ven ven = venner.getElement(i);
+			if (ven.getNavn().toUpperCase().contains(sogestreng.toUpperCase()) 
+					|| ven.getEmail().toLowerCase().contains(sogestreng.toLowerCase())
+					|| ven.getTelefon().toLowerCase().contains(sogestreng.toLowerCase()) 
+					|| ven.getAdresse().toUpperCase().contains(sogestreng.toUpperCase())
+					|| ven.getPostnr().toLowerCase().contains(sogestreng.toLowerCase()) 
+					|| ven.getFødselsdag().toLowerCase().contains(sogestreng.toLowerCase())) {
+				fundneVenner.addElement(ven);
+			}
+
+		}
+		return fundneVenner;
+
 	}
 
 }

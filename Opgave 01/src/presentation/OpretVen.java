@@ -21,6 +21,7 @@ public class OpretVen {
 	}
 
 	private void showMenu() {
+		System.out.println();
 		System.out.println("Opret Ven eller Bekendt");
 		System.out.println(
 				"Indtast navn, email, telefon, fødselsdag, adresse, postnr efterfulgt med et , efter hver indtastning - For at afslutte tryk på \"x\"");
@@ -35,7 +36,6 @@ public class OpretVen {
 		if (retur) {
 			System.out.println();
 			System.out.println("Succesfuldt Oprettet");
-			System.out.println(ven);
 			System.out.println();
 		}
 

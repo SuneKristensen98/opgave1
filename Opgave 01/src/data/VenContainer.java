@@ -2,6 +2,7 @@ package data;
 
 import logic.Ven;
 
+
 public class VenContainer {
 
 	int a, b;
@@ -29,7 +30,8 @@ public class VenContainer {
 		}
 		array[nextElement] = ven;
 		nextElement++;
-		System.out.println("jeg har været i addElement" + ven);
+		System.out.println();
+		System.out.println(ven);
 	}
 
 	public Ven getElement(int index) {
@@ -40,7 +42,8 @@ public class VenContainer {
 		return nextElement;
 	}
 
-	public Ven find(String email) {
+
+	public VenContainer find(String sogestreng) {
 		return null;
 	}
 
@@ -48,6 +51,7 @@ public class VenContainer {
 		for (int i = 0; i < nextElement; i++) {
 			if (array[i].getEmail().equals(email)) {
 				System.out.println(array[i]);
+				System.out.println();
 				return array[i];
 				
 			}

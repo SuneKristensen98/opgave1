@@ -56,7 +56,9 @@ public class Menu {
 			break;
 		case "5":
 			System.out.println("  5: Find ven eller bekendt");
-
+			FindVen findVen = new FindVen();
+			findVen.start(vennerOgBekendte, sc);
+			
 			break;
 		case "x":
 			System.out.println("  x: Afslut");
