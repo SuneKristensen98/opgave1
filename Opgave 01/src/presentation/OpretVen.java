@@ -37,6 +37,7 @@ public class OpretVen {
 			System.out.println();
 			System.out.println("Succesfuldt Oprettet");
 			System.out.println();
+			System.out.println();
 		}
 
 		else {
