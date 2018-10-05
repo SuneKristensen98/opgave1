@@ -1,5 +1,6 @@
 package presenationFX;
 
+
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -52,117 +53,89 @@ public class HovedMenu extends Application {
 		window.setScene(Hovedmenu);
 		window.show();
 
-		Label label1 = new Label("Opret Ven");
-		Button btnBack = new Button("Gå tilbage til hovedmenuen");
-		btnBack.setPrefSize(170, 10);
+		Label labelNavn = new Label("Navn");
+		TextField tfNavn = new TextField();
+		tfNavn.setMaxWidth(200);
+		Label labelAdresse = new Label("Adresse");
+		TextField tfAdresse = new TextField();
+		tfAdresse.setMaxWidth(200);
+		Label labelEmail = new Label("Email");
+		TextField tfEmail = new TextField();
+		tfEmail.setMaxWidth(200);
+		Label labelTelefon = new Label("Telefon");
+		TextField tfTelefon = new TextField();
+		tfTelefon.setMaxWidth(200);
+		Label labelFødselsdag = new Label("Fødselsdag");
+		TextField tfFødselsdag = new TextField();
+		tfFødselsdag.setMaxWidth(200);
+		Label labelPostnr = new Label("Postnummer");
+		TextField tfPostnr = new TextField();
+		tfPostnr.setMaxWidth(200);
+		Button btnOpret1 = new Button("Opret");
+		btnOpret1.setPrefSize(100, 10);
+		Button btnBack = new Button("Tilbage");
+		btnBack.setPrefSize(100, 10);
 		btnBack.setOnAction(e -> window.setScene(Hovedmenu));
-		VBox layout1 = new VBox(20);
+		VBox layout1 = new VBox(10);
 		layout1.setAlignment(Pos.CENTER);
-		layout1.getChildren().addAll(label1, btnBack);
+		layout1.getChildren().addAll(labelNavn, tfNavn, labelEmail, tfEmail, labelTelefon, tfTelefon, labelFødselsdag, tfFødselsdag, labelAdresse, tfAdresse, labelPostnr, tfPostnr, btnOpret1, btnBack);
 		Opret = new Scene(layout1, 800, 600);
 
 		Label label2 = new Label("Opdatere Ven eller bekendt");
-		Button btnBack1 = new Button("Gå tilbage til hovedmenuen");
-		btnBack1.setPrefSize(170, 10);
+		Button btnBack1 = new Button("Tilbage");
+		btnBack1.setPrefSize(100, 10);
 		btnBack1.setOnAction(e -> window.setScene(Hovedmenu));
-		VBox layout2 = new VBox(20);
+		VBox layout2 = new VBox(10);
 		layout2.setAlignment(Pos.CENTER);
 		layout2.getChildren().addAll(label2, btnBack1);
 		Opdatere = new Scene(layout2, 800, 600);
 
 		Label label3 = new Label("Slet Ven eller bekendt");
-		Button btnBack2 = new Button("Gå tilbage til hovedmenuen");
-		btnBack2.setPrefSize(170, 10);
+		Button btnBack2 = new Button("Tilbage");
+		btnBack2.setPrefSize(100, 10);
 		btnBack2.setOnAction(e -> window.setScene(Hovedmenu));
-		VBox layout3 = new VBox(20);
+		VBox layout3 = new VBox(10);
 		layout3.setAlignment(Pos.CENTER);
 		layout3.getChildren().addAll(label3, btnBack2);
 		Slet = new Scene(layout3, 800, 600);
 
 		Label label4 = new Label("Hent Ven eller bekendt");
-		Button btnBack3 = new Button("Gå tilbage til hovedmenuen");
+		Button btnBack3 = new Button("Tilbage");
+		Label henttext = new Label("Indtast navn");
+		TextField ind = new TextField();
+		ind.setMaxWidth(200);
 		btnBack3.setPrefSize(170, 10);
 		btnBack3.setOnAction(e -> window.setScene(Hovedmenu));
-		VBox layout4 = new VBox(20);
+		VBox layout4 = new VBox(10);
 		layout4.setAlignment(Pos.CENTER);
-		layout4.getChildren().addAll(label4, btnBack3);
+		layout4.getChildren().addAll(label4, henttext, ind, btnBack3);
 		Hent = new Scene(layout4, 800, 600);
 
+
 		Label label5 = new Label("Find Ven eller bekendt");
-		Button btnBack4 = new Button("Gå tilbage til hovedmenuen");
-		Label findtext = new Label ("Indtast din email her");
+		Button btnBack4 = new Button("Tilbage");
+		Button btnSøg = new Button("Søg");
+		Label findtext = new Label ("Indtast email her");
 		tf = new TextField();
-		btnBack4.setPrefSize(170, 10);
+		tf.setMaxWidth(200);
+		btnBack4.setPrefSize(100, 10);
+		btnSøg.setPrefSize(100, 10);
 		btnBack4.setOnAction(e -> window.setScene(Hovedmenu));
-		VBox layout5 = new VBox(20);
+		VBox layout5 = new VBox(10);
 		layout5.setAlignment(Pos.CENTER);
-		layout5.getChildren().addAll(label5, findtext, btnBack4, tf);
+		layout5.getChildren().addAll(label5, findtext, tf, btnSøg, btnBack4);
 		Find = new Scene(layout5, 800, 600);
 		
-	
+		btnSøg.setOnAction(new EventHandler<ActionEvent>() {
+
+			@Override
+			public void handle(ActionEvent arg0) {
+			
 				
+			}
+		});
+
 
 	}
 
 }
-
-//package presenationFX;
-//
-//// Demonstrate JavaFX events and buttons.
-//import javafx.application.*;
-//import javafx.scene.*;
-//import javafx.stage.*;
-//import javafx.scene.layout.*;
-//import javafx.scene.control.*;
-//import javafx.event.*;
-//import javafx.geometry.*;
-//
-//public class HovedMenu extends Application {
-//
-//	Label response;
-//
-//	public static void main(String[] args) {
-//		// Start the JavaFX application by calling launch().
-//		launch(args);
-//	}
-//
-//	// Override the start() method.
-//	public void start(Stage myStage) {
-//		// Give the stage a title.
-//		myStage.setTitle("Use JavaFX Buttons and Events.");
-//		// Use a FlowPane for the root node. In this case,
-//		// vertical and horizontal gaps of 10.
-//		FlowPane rootNode = new FlowPane(800, 10);
-//		// Center the controls in the scene.
-//		rootNode.setAlignment(Pos.CENTER);
-//		// Create a scene.
-//		Scene myScene = new Scene(rootNode, 800, 600);
-//		// Set the scene on the stage.
-//		myStage.setScene(myScene);
-//		// Create a label.
-//		response = new Label("Push a Button");
-//		// Create two push buttons.
-//		Button btnVen = new Button("Opret Ven");
-//		btnVen.setPrefSize(100, 10);
-//		Button btnOpdatere = new Button("Opdatere Ven");
-//		btnOpdatere.setPrefSize(100, 10);
-//		Button btnSlet = new Button("Slet Ven");
-//		btnSlet.setPrefSize(100, 10);
-//		Button btnHent = new Button("Hent Ven");
-//		btnHent.setPrefSize(100, 10);
-//		Button btnFind = new Button("Find Ven");
-//		btnFind.setPrefSize(100, 10);
-//
-//		// Handle the action events for the Down button.
-//		btnVen.setOnAction(new EventHandler<ActionEvent>() {
-//			public void handle(ActionEvent ae) {
-//				myStage.setScene(myScene2);
-//			}
-//		});
-//
-//		// Add the label and buttons to the scene graph.
-//		rootNode.getChildren().addAll(btnVen, btnOpdatere, btnSlet, btnHent, btnFind, response);
-//		// Show the stage and its scene.
-//		myStage.show();
-//	}
-//}

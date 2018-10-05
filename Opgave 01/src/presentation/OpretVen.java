@@ -33,7 +33,7 @@ public class OpretVen {
 				dele[5].trim());
 
 		boolean retur = venner.opret(ven);
-		if (retur) {
+		if (retur == true) {
 			System.out.println();
 			System.out.println("Succesfuldt Oprettet");
 			System.out.println();
