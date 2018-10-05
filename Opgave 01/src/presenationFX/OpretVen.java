@@ -12,7 +12,7 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-public class HovedMenu extends Application {
+public class OpretVen extends Application {
 	Label response;
 
 	Stage window;
