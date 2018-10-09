@@ -1,6 +1,6 @@
 package presenationFX;
 
-
+import data.VenContainer;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -10,11 +10,15 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.Separator;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import logic.Ven;
+import logic.VennerOgBekendte;
+import logic.VennerOgBekendteFactory;
 
 public class HovedMenu extends Application {
 	Label response;
@@ -78,9 +82,31 @@ public class HovedMenu extends Application {
 		btnBack.setOnAction(e -> window.setScene(Hovedmenu));
 		VBox layout1 = new VBox(10);
 		layout1.setAlignment(Pos.CENTER);
-		layout1.getChildren().addAll(labelNavn, tfNavn, labelEmail, tfEmail, labelTelefon, tfTelefon, labelFødselsdag, tfFødselsdag, labelAdresse, tfAdresse, labelPostnr, tfPostnr, btnOpret1, btnBack);
+		layout1.getChildren().addAll(labelNavn, tfNavn, labelEmail, tfEmail, labelTelefon, tfTelefon, labelFødselsdag,
+				tfFødselsdag, labelAdresse, tfAdresse, labelPostnr, tfPostnr, btnOpret1, btnBack);
 		Opret = new Scene(layout1, 800, 600);
 
+
+		
+		
+		btnOpret1.setOnAction(new EventHandler<ActionEvent>() {
+
+			@Override
+			public void handle(ActionEvent arg0) {
+				VennerOgBekendte venner = new VennerOgBekendteFactory().makeVennerOgBekendte();
+				Ven ven = new Ven(tfNavn.getText(), tfAdresse.getText(), tfEmail.getText(), tfFødselsdag.getText(),
+						tfTelefon.getText(), tfPostnr.getText());
+				venner.opret(ven);
+
+			}
+		});
+		{
+
+		}
+		
+	
+		
+		
 		Label label2 = new Label("Opdatere Ven eller bekendt");
 		Button btnBack1 = new Button("Tilbage");
 		btnBack1.setPrefSize(100, 10);
@@ -101,21 +127,22 @@ public class HovedMenu extends Application {
 
 		Label label4 = new Label("Hent Ven eller bekendt");
 		Button btnBack3 = new Button("Tilbage");
+		Button btnhent = new Button("Hent");
 		Label henttext = new Label("Indtast navn");
 		TextField ind = new TextField();
 		ind.setMaxWidth(200);
 		btnBack3.setPrefSize(170, 10);
 		btnBack3.setOnAction(e -> window.setScene(Hovedmenu));
+		btnhent.setPrefSize(170, 10);
 		VBox layout4 = new VBox(10);
 		layout4.setAlignment(Pos.CENTER);
-		layout4.getChildren().addAll(label4, henttext, ind, btnBack3);
+		layout4.getChildren().addAll(label4, henttext, ind, btnhent, btnBack3);
 		Hent = new Scene(layout4, 800, 600);
-
 
 		Label label5 = new Label("Find Ven eller bekendt");
 		Button btnBack4 = new Button("Tilbage");
 		Button btnSøg = new Button("Søg");
-		Label findtext = new Label ("Indtast email her");
+		Label findtext = new Label("Indtast email her");
 		tf = new TextField();
 		tf.setMaxWidth(200);
 		btnBack4.setPrefSize(100, 10);
@@ -125,17 +152,6 @@ public class HovedMenu extends Application {
 		layout5.setAlignment(Pos.CENTER);
 		layout5.getChildren().addAll(label5, findtext, tf, btnSøg, btnBack4);
 		Find = new Scene(layout5, 800, 600);
-		
-		btnSøg.setOnAction(new EventHandler<ActionEvent>() {
-
-			@Override
-			public void handle(ActionEvent arg0) {
-			
-				
-			}
-		});
-
 
 	}
-
 }

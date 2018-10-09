@@ -21,14 +21,27 @@ public class VennerOgBekendteImpl implements VennerOgBekendte {
 
 	@Override
 	public boolean opdater(Ven ven) {
-		// TODO Auto-generated method stub
 		return false;
+////		public boolean opdater(Ven ven) {
+////			for (int i=0; i < venner.size(); i++) {
+////				Ven glven = venner.getElement(i);
+////				if (glven.getEmail().equals(ven.getEmail())) {
+////					venner.replaceElement(i, ven);
+////				}
+////			}
+////		}
 	}
 
-	@Override
+//	@Override
 	public boolean slet(String email) {
-		// TODO Auto-generated method stub
 		return false;
+//			for (int i=0; i < venner.size(); i++) {
+//				Ven glven = venner.getElement(i);
+//				if (glven.getEmail().equals(email)) {
+//					venner.removeElement(i);
+//				}
+//			}
+//		}
 	}
 
 	@Override

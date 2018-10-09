@@ -1,4 +1,6 @@
 package data;
+import java.util.Arrays;
+
 
 import logic.Ven;
 
@@ -42,6 +44,16 @@ public class VenContainer {
 		return nextElement;
 	}
 
+	public void removeElement(int i) {
+//		array.remove(i);
+		
+	}
+	
+	public void replaceElement(int i, Ven element) {
+	//	array.set(i, Ven element);
+	}
+	
+	
 
 	public VenContainer find(String sogestreng) {
 		return null;

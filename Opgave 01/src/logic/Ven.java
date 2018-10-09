@@ -1,5 +1,11 @@
 package logic;
 
+import javafx.event.EventHandler;
+import javafx.event.EventType;
+import javafx.scene.control.TextField;
+import javafx.scene.input.KeyEvent;
+import presenationFX.HovedMenu;
+
 public class Ven {
 
 	protected String navn;
@@ -17,6 +23,11 @@ public class Ven {
 		this.adresse = adresse;
 		this.postnr = postnr;
 
+	}
+
+
+	public Ven(EventHandler<? super KeyEvent> onKeyPressed, EventHandler<? super KeyEvent> onKeyPressed2) {
+		
 	}
 
 
