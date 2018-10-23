@@ -55,8 +55,16 @@ public class VenContainer {
 	
 	
 
-	public VenContainer find(String sogestreng) {
+	public Ven find(String sogestreng) {
+		for (int i = 0; i < nextElement; i++) {
+			
+			if (array[i].getEmail().contains(s)) {
+				System.out.println(array[i]);
+				System.out.println();
+				return array[i];
 		return null;
+	}
+		}
 	}
 
 	public Ven hent(String email) {
@@ -74,19 +82,19 @@ public class VenContainer {
 		System.out.println();
 		return null;
 		}
+	
+		
+
+
+		@Override
+		public String toString() {
+			String s = "";
+			
+			for(int i = 0; i<size(); i++) {
+				Ven ven = getElement(i);
+				s = s + ven.toString() + "\n";
+			}
+			
+			return s;
+		}
 	}
-
-
-//		for (int a = 1; a < nextElement; a++) {
-//			for (int b = nextElement - 1; b >= a; b--) {
-//				if (array[b - 1].compareTo(array[b]) > 0) { 
-//					// if out of order, exchange elements
-//					String t = array[b - 1];
-//					array[b - 1] = array[b];
-//					array[b] = t;
-//				}
-//			}
-//		}
-//	}
-//
-//}

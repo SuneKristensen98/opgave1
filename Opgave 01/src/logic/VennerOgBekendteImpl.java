@@ -5,8 +5,10 @@ import java.lang.reflect.Array;
 import data.VenContainer;
 
 public class VennerOgBekendteImpl implements VennerOgBekendte {
+	
+	private static VenContainer venner = new VenContainer();
 
-	private VenContainer venner = new VenContainer();
+	//private VenContainer venner = new VenContainer();
 
 	@Override
 	public boolean opret(Ven ven) {
